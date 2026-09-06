@@ -21,8 +21,7 @@ Windows support.
   `--ignore-user-config`, `--output-schema`,
   `--skip-git-repo-check`, and stdin via `-`.
 - Verified locally with `codex-cli 0.153.4`. GOATI's merchant-search consumer
-  retains its separate `0.149.0` preflight pin until that application explicitly
-  advances and verifies its live deployment image.
+  also pins `0.153.4` in its preflight and deployment image.
 
 Install the tagged module with:
 

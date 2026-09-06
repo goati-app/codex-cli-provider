@@ -24,6 +24,12 @@ Windows support.
   retains its separate `0.149.0` preflight pin until that application explicitly
   advances and verifies its live deployment image.
 
+Install the tagged module with:
+
+```sh
+go get github.com/goati-app/codex-cli-provider@v0.1.1
+```
+
 The command is invoked without a shell. The child receives only `CODEX_HOME`, a
 private `HOME`, a private `TMPDIR`, a closed `PATH`, and UTF-8 locale variables.
 User config is ignored while exec-policy rules remain active as an additional
@@ -144,19 +150,9 @@ go test ./...
 Live tests belong in consumers because they must declare the supported Codex
 version, model, capabilities, and account policy explicitly.
 
-## Local module consumption and release packaging
+## Release packaging
 
-GOATI currently consumes this checkout through a development-only Go module
-replacement:
-
-```go
-replace github.com/goati-app/codex-cli-provider => ../codex-cli-provider
-```
-
-That replacement works when both sibling directories are present. It is not a
-release distribution mechanism: a Docker build whose context is only the GOATI
-backend cannot read the sibling directory. Before producing such an image, use
-an explicitly agreed packaging strategy (for example, a published module version
-or a deliberately maintained vendor tree) and remove or replace the local-only
-dependency path. This extraction intentionally does not publish a repository or
-module version; publication remains a separately authorized release action.
+Tagged releases are published as a normal Go module from
+`github.com/goati-app/codex-cli-provider`. Consumers should depend on an explicit
+version rather than a sibling-directory `replace`; this keeps standalone and
+Docker builds independent of the checkout layout.

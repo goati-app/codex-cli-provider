@@ -39,11 +39,7 @@ handling policy remain outside the library.
 
 ## Release boundary
 
-GOATI's current `replace ../codex-cli-provider` directive is suitable for the
-checked-out sibling development layout and for local verification. GOATI's
-production Dockerfile uses `backend/` as its complete build context, so it cannot
-consume that sibling path. A published module version or another explicitly
-agreed distribution mechanism is required before the production image can be
-built from that context. Vendoring and remote publication were not selected
-implicitly because they are lifecycle decisions that require an explicit
-release choice.
+The library is published from `github.com/goati-app/codex-cli-provider` and its
+current release is tagged `v0.1.1`. GOATI consumes that version without a local
+`replace`, so its standalone and Docker builds do not depend on a sibling
+checkout.

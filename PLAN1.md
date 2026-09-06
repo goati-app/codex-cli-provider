@@ -1,6 +1,6 @@
 # PLAN1 — Librería de Codex CLI como proveedor de IA
 
-Estado: implementación realizada; distribución de producción pendiente de una decisión de release.
+Estado: implementación realizada y módulo público versionado. Versión actual: `v0.1.1`.
 
 ## Objetivo
 
@@ -124,7 +124,7 @@ Resultado: GOATI consume la librería sin cambios intencionales en el comportami
 
 Añadir ejemplos mínimos de ejecución, salida estructurada, cancelación y registro de usage desde el consumidor. Documentar autenticación externa, almacenamiento persistente, concurrencia, errores y compatibilidad con Codex.
 
-La versión inicial prevista es `v0.1.0`, dado que el contrato es utilizable pero aún puede evolucionar antes de `v1`. El tag se materializará al seleccionar el repositorio y mecanismo de distribución. Publicar el módulo, crear un repositorio remoto o modificar infraestructura de releases requiere una instrucción posterior; este plan no autoriza esas acciones.
+La versión inicial fue `v0.1.0`; `v0.1.1` actualiza la documentación de distribución pública. El contrato puede evolucionar antes de `v1`. El módulo se distribuye desde `github.com/goati-app/codex-cli-provider`; GOATI consume la versión publicada sin depender de una ruta local.
 
 ## Validación
 
